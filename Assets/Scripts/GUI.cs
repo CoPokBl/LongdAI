@@ -38,6 +38,11 @@ public class GUI : MonoBehaviour {
     private void RenderMessage(Message msg) {
         messages.text += $"\n{msg.Sender}: {msg.Text}";
     }
+    
+    public void ResetMessages() {
+        Storage.SaveMessages(Array.Empty<Message>());
+        messages.text = "";
+    }
 
     /// <summary>
     /// Triggered whenever the send message button is clicked. (Including when enter is pressed)
